@@ -1,0 +1,391 @@
+<%- include("partials/navbar.ejs") %> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+<style>
+    html,body{
+        
+   	background: #252735;
+    font-family: 'Akshar-Variable';
+ 
+}
+.container-fluid{
+        height: 60px;
+
+  background-color: #36394C;
+
+  
+}
+.navbar{
+
+  padding: 0 !important;
+}
+.navbar-nav {
+      position: absolute;
+      left: 53% !important;
+      transform: translateX(-50%);
+    }
+
+#navo{
+  color: #36394C;
+  opacity: 50%;
+  transition: background-color 0.9s ease;
+}
+#navo:hover{
+  opacity: 100%;
+  transition: background-color 0.9s ease;
+
+}
+
+#log{
+  color: rgb(47, 49, 12);
+}
+.inc {
+      color: #ffffff;
+      font-size: 40px;
+      position: absolute;
+      left: 1%;
+      font-family: "Montserrat", "Helvetica", Arial, sans-serif;
+      top: 6px;
+      user-select: none !important;
+      font-weight: bolder;
+    }
+a{
+  font-family: Oswald;
+  font-size: 20px !important;
+   user-select: none !important;
+   color: white !important;
+  margin-left: 10px;
+  margin-right: 20px;
+
+}
+
+
+.navbar-collapse{
+  left: 200px !important;
+}
+.logDiv {
+      position: relative;
+      left: 9px;
+      background-color: #16676B;
+      align-items: center;
+      justify-content: center;
+      padding: 9px;
+      border-radius: 20px;
+    }
+.head{
+    color: white;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.intro{
+  color: white;
+  font-family: 'Akshar-Variable';
+  font-size: 20px;
+  margin-top: 30px;
+  text-align: center;
+}
+@font-face {
+  font-family: 'Akshar-Variable';
+  src: url('/fonts/Akshar-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.logo{
+  width: 250px;
+   margin: 0px auto;
+   border-radius: 20px;
+}
+.imgcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 130px;
+
+
+}
+.btn-our{
+display: block;
+margin:0 auto;
+margin-top: 30px;
+padding: 13px;
+width: 200px;
+height: 70px;
+border-radius: 10px;
+background-color: #00C4CC;
+}
+.btns{
+ font-family: 'Akshar-Variable';
+ font-size: 25px;
+ font-weight: bold;
+ color: white;
+}
+.about{
+
+  color: white;
+ font-family: 'Akshar-Variable';
+ font-size: 90px;
+ margin-top: 190px;
+ 
+}
+.container-flex{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 127px;
+    justify-content: center;
+    margin-top: 70px
+   
+
+}
+.small{
+    height: 599px;
+    width: 318px;
+    border-radius: 5px;
+    background-color:  #2A3142;
+  
+
+    
+}
+.newaccount{
+    font-size: 20px;
+    color: #8B88FC;
+    font-family: 'Akshar-Variable';
+    text-align: center ;
+    position: relative;
+    left: 720px;
+    top: 15px;
+
+
+}
+.label1{
+    color: white;
+    position: relative;
+    left: 200px;
+    top: 60px;
+    font-size: 20px;
+    
+}
+.label2{
+    color: white;
+    position: relative;
+    left: 455px;
+    top: 60px;
+    font-size: 20px;
+    
+}
+.label3{
+    color: white;
+    position: relative;
+    left: 780px;
+    top: 60px;
+    font-size: 20px;
+    
+}
+.inputs{
+    width: 290px;
+height: 36px;
+flex-shrink: 0;
+border-radius: 10px;
+background: #D9D9D9;
+margin: 13px;
+}
+.labels{
+color: aliceblue;
+font-size: 15px;
+position: relative;
+top: 10px;
+left: 12px;
+}
+.labelsi{
+    color: aliceblue;
+font-size: 15px;
+position: relative;
+top: 10px;
+left: 12px;
+}
+
+.labelsi:after {
+    content: " *"; 
+    color: red; 
+}
+.registerbtn{
+    width: 150px;
+height: 53px;
+flex-shrink: 0;
+border-radius: 20px;
+background: #08A2A8;
+margin-top: 25px;
+
+}
+.container-log{
+  width: 420px;
+height: 280px;
+flex-shrink: 0;
+border-radius: 10px;
+background: #2A3142;
+
+position: relative;
+margin: 0 auto;
+margin-top: 22px;
+}
+.labels{
+color: aliceblue;
+font-size: 15px;
+position: relative;
+top: 10px;
+left: 12px;
+}
+.labelsi{
+    color: aliceblue;
+font-size: 18px;
+position: relative;
+top: 10px;
+left: 20px;
+margin-top: 20px;
+}
+.inputs{
+    width: 370px;
+height: 40px;
+flex-shrink: 0;
+border-radius: 10px;
+background: #D9D9D9;
+margin: 13px;
+}
+.forgot{
+  color: #08A1A8;
+
+text-align: center;
+
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 55px; 
+text-decoration-line: underline;
+}
+.logolog{
+  width: 125px; height: 125px; flex-shrink: 0;
+  margin-top: 120px;
+}
+.instructions{
+  width: 258px;
+height: 414px;
+flex-shrink: 0;
+border-radius: 29px;
+background: #2A3142;
+position: relative;
+left: 1100px;
+top: -330px;
+}
+.account{
+  width: 420px;
+height: 55px;
+flex-shrink: 0;
+border-radius: 10px;
+background: #2A3142;
+position: relative;
+top: -390px;
+}
+.logbtn{
+    width: 150px;
+height: 53px;
+flex-shrink: 0;
+border-radius: 20px;
+background: #08A2A8;
+margin-top: 25px;
+position: relative;
+top: -390px;
+
+}
+#theflash{
+  width: 250px !important;
+  margin-top: 10px;
+background-color: #00C4CC;
+color: white;
+border: 0px;
+}
+.container-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 100px; 
+} 
+
+.logbtn {
+    font-size: 25px;
+    color: #FFFFFF;
+    background-color: #08A2A8; 
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 300px;
+}
+.instructions{
+  width: 458px;
+height: 614px;
+flex-shrink: 0;
+border-radius: 29px;
+background: #2A3142;
+position: relative;
+left: 150px;
+top: 130px;
+}
+.instructions2{
+  width: 458px;
+height: 614px;
+flex-shrink: 0;
+border-radius: 29px;
+background: #2A3142;
+position: absolute;
+left: 1000px;
+top: 195px;
+}
+</style>
+</head>
+<body>
+   
+     
+
+  
+  <div class="instructions">
+    <h3 style="color: #FFF; text-align: center; font-size: 30px; font-style: normal; font-weight: 700;  line-height: 92px;">Please Note !</h3>
+    <h4 style="color: white; text-align: center; font-size: 25px; margin-top: -25pxpx;  padding: 10px; font-style: normal; font-weight: 200; line-height: 35px;">
+      1 ) Please dont click anything until extraction is done. <br><br> 2 ) If you dont have already you need to have an active account. <br><br> 3 ) We will only extract the bills no personal details will be touched. <br><br> 4 ) You will need to have ready the Username and Password and the phone number associated with the account.
+    </h4>
+  </div>
+  
+
+
+
+
+  <div class="container-btn">
+    <form action="/run-elec-script" method="post">
+        <button class="logbtn" type="submit">Update Electricity</button>
+    </form>
+    <form action="/run-water-script" method="post">
+        <button class="logbtn" type="submit">Update Water</button>
+    </form>
+</div>
+
+
+
+
+<div class="instructions2">
+  <h3 style="color: #FFF; text-align: center; font-size: 30px; font-style: normal; font-weight: 700;  line-height: 92px;">Did you face any problems ?</h3>
+  <h4 style="color: white; text-align: center; font-size: 25px; margin-top: -25pxpx;  padding: 10px; font-style: normal; font-weight: 200; line-height: 35px;">
+    1 ) If there is no data : please see the service providers instructions on how to add data and then try again<br><br><br> 2 ) Long time : If the process takes more than 30 seconds close the window and try again <br><br><br> 3 ) If you face any other problems that are not mentioned above and trying again did not fix them please contact us at smasrdd@gmail.com  
+  </h4>
+</div>
+
+
+</body>
+</html>

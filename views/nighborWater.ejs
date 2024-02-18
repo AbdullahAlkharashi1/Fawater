@@ -1,0 +1,221 @@
+<%- include("partials/navbar.ejs") %>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Similar Households Water Consumption</title>
+
+        <link rel="stylesheet" href="/NighborStyle.css" />
+
+        <link href='https://fonts.googleapis.com/css?family=Akshar' rel='stylesheet'>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load('current', {
+                packages: ['corechart']
+            });
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+                const data = JSON.parse('<%- dataJson %>');
+                var chartData = google.visualization.arrayToDataTable([
+                    ['Month', 'Consumption'],
+                    ['you', Math.floor(data.userAvgWater)],
+                    ['Family Members', Math.floor(data.nighborWaterSize)],
+                    ['House Size', Math.floor(data.nighborWaterTotalAVG)],
+
+                ]);
+                var options = {
+                    width: 600,
+                    height: 400,
+                    bar: {
+                        groupWidth: "85%"
+                    },
+                    legend: {
+                        position: "none"
+                    },
+                    backgroundColor: '#2A3142',
+                    colors: ['#626ED4'],
+                    titleTextStyle: {
+                        color: 'white',
+                        fontSize: 18,
+                    },
+                    hAxis: {
+                        title: 'Month',
+                        titleTextStyle: {
+                            color: 'white',
+                            fontSize: 14,
+                        },
+                        textStyle: {
+                            color: 'white',
+                            fontSize: 12,
+                        },
+                    },
+                    vAxis: {
+                        title: 'Consumption',
+                        titleTextStyle: {
+                            color: 'white',
+                            fontSize: 14,
+                        },
+                        textStyle: {
+                            color: 'white',
+                            fontSize: 14,
+                        },
+                        viewWindow: {
+                            mode: 'explicit',
+                            min: 0,
+                            max: 800
+                        }
+                    }
+                };
+                var chart = new google.visualization.ColumnChart(document.getElementById('columnchart_values'));
+                chart.draw(chartData, options);
+            }
+        </script>
+
+
+    </head>
+
+    <body>
+        <h2 class="head"><span>Similar Households Water Consumption</span></h2><br>
+        <div class="centered-text">
+            <h3>Same Number Of</h3>
+        </div>
+
+        <div class="container">
+            <script>
+                const data = JSON.parse('<%- dataJson %>');
+            </script>
+            <div class="curMonth">
+                <h5 class="label">Your Average</h5>
+                <h6>Average</h6>
+                <p>
+                    <script>document.write(Math.floor(data.userAvgWater) + ' SAR');</script>
+                </p>
+            </div>
+
+            <div class="curMonth">
+                <h5 class="label">Family Members</h5>
+                <h6>Average</h6>
+                <p>
+                    <script>document.write(Math.floor(data.nighborWaterFamily) + ' SAR');</script>
+                </p>
+            </div>
+
+            <div class="upMonth">
+                <h5 class="label">House Size</h5>
+                <h6>Average</h6>
+                <div class="consumptionUp">
+                    <p style="color: white;  left: 50%; top: 100px;">
+                        <script>document.write(Math.floor(data.nighborWaterSize) + ' SAR');</script>
+                    </p>
+
+                </div>
+            </div>
+            <div class="map">
+                <h5 class="shop"> <span>Similar Households details</span< /h5> <br>
+
+                        <span>
+                            <h5 style="margin-top: 50px; font-size: 20px;">Similar Households Average Consumption</h5>
+                        </span>
+                        <div
+                            style="margin-top: 15px; margin-left: 25%; width: 50%; height: 50px; background: #252735; border-radius: 9999px; border: 10px rgba(70.27, 66.87, 236.71, 0) solid">
+                            <p>
+                                <script>document.write(Math.floor(data.nighborWaterTotalAVG) + ' SAR');</script>
+
+                            </p>
+                        </div>
+
+                        <span>
+                            <h5 style="margin-top: 50px; font-size: 20px;">Your Consumption Compared To Similar Households</h5>
+                        </span>
+                        <script>
+                            var percentageChange = Math.floor(((data.nighborWaterTotalAVG - data.userAvgWater) / Math.abs(data.nighborWaterTotalAVG)) * 100);
+
+                            var comparisonText = "";
+                            if (percentageChange > 0) {
+                                comparisonText = `You are ${Math.abs(percentageChange)}% better than your neighbors.`;
+                            } else if (percentageChange < 0) {
+                                comparisonText = `You are ${Math.abs(percentageChange)}% worse than your neighbors.`;
+                            } else {
+                                comparisonText = `You have the same average consumption as your neighbors.`;
+                            }
+
+                            document.write(`
+                                        <p style="font-size: 17px;">${comparisonText}</p>
+                                        <div class="progress" role="progressbar" aria-label="Success example"
+                                            aria-valuenow="${Math.abs(percentageChange)}"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            <div class="progress-bar ${percentageChange > 0 ? 'bg-success' : 'bg-danger'}"
+                                                style="width: ${Math.abs(percentageChange)}%">
+                                                ${Math.abs(percentageChange)}% ${percentageChange > 0 ? 'better' : 'worse'}
+                                            </div>
+                                        </div>
+                                    `);
+                        </script>
+
+            </div>
+            <div class="graph">
+                <h5 class="shop"> <span>Your Monthly Consumption</span< /h5> <br><br>
+                        <div id="columnchart_values"></div>
+
+                        <div class="waste">
+                            <span>
+                                <h5 style="font-size: 20px;">You Are
+                                    <script>
+                                        if (data.userAvgWater - data.nighborWaterFamily < 0) {
+                                            document.write('Under');
+                                            var borderColor = 'rgb(18, 247, 52)'; 
+                                        } else {
+                                            document.write('Over');
+                                            var borderColor = 'red'; 
+                                        }
+                                    </script>
+                                    The Average <br>Consumption For Family Members By
+                                </h5>
+                            </span>
+                            <div style="margin-bottom: 20px; margin-top: 15px; margin-left: 25%; width: 120px; height: 120px; background: #252735; border-radius: 9999px !important; border: 10px solid"
+                                id="consumptionDiv">
+                                <p style="margin-top: 40px;">
+                                    <script>
+                                        var difference = Math.floor(Math.abs(data.userAvgWater - data.nighborWaterFamily));
+                                        document.write(`${difference} SAR`);
+                                        document.getElementById("consumptionDiv").style.borderColor = borderColor;
+                                    </script>
+                                </p>
+                            </div>
+
+                            <span>
+                                <h5 style="font-size: 20px;">You Are
+                                    <script>
+                                        if (data.userAvgWater - data.nighborWaterSize < 0) {
+                                            var borderColor = 'rgb(18, 247, 52)'; 
+                                        } else {
+                                            document.write('Over');
+                                            var borderColor = 'red'; 
+                                        }
+                                    </script>
+                                    The Average <br>Consumption For House Size By
+                                </h5>
+                            </span>
+
+                            <div style="margin-bottom: 20px; margin-top: 15px; margin-left: 25%; width: 120px; height: 120px; background: #252735; border-radius: 9999px; border: 10px solid"
+                                id="houseSizeDiv">
+                                <p style="margin-top: 40px;">
+                                    <script>
+                                        var difference = Math.floor(Math.abs(data.userAvgWater - data.nighborWaterSize));
+                                        document.write(`${difference} SAR`);
+                                        document.getElementById("houseSizeDiv").style.borderColor = borderColor;
+                                    </script>
+                                </p>
+                            </div>
+
+
+                        </div>
+            </div>
+
+        </div>
+    </body>
+
+    </html>

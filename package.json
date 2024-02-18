@@ -1,0 +1,25 @@
+{
+  "name": "fawater",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Abdullah",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "connect-flash": "^0.1.1",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mongoose": "^8.0.3",
+    "multer": "^1.4.5-lts.1",
+    "path": "^0.12.7"
+  },
+  "keywords": [],
+  "description": ""
+}

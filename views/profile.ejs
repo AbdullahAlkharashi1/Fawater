@@ -1,0 +1,163 @@
+<%- include("partials/navbar.ejs") %> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container-flex{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 127px;
+    justify-content: center;
+    margin-top: 10px
+   
+
+}
+.small{
+    height: 430px;
+    width: 318px;
+    border-radius: 5px;
+    background-color:  #2A3142;
+  
+
+    
+}
+.newaccount{
+    font-size: 20px;
+    color: #8B88FC;
+    font-family: 'Akshar-Variable';
+    text-align: center ;
+    position: relative;
+    left: 720px;
+    top: 15px;
+
+
+}
+.label1{
+    color: white;
+    position: relative;
+    left: 570px;
+    top: 5px;
+    font-size: 20px;
+    
+}
+.label2{
+    color: white;
+    position: relative;
+    left: 890px;
+    top: 5px;
+    font-size: 20px;
+    
+}
+.label3{
+    color: white;
+    position: relative;
+    left: 780px;
+    top: 60px;
+    font-size: 20px;
+    
+}
+.inputs{
+    width: 290px;
+height: 36px;
+flex-shrink: 0;
+border-radius: 15px;
+background: #D9D9D9;
+margin: 13px;
+}
+.labels{
+color: aliceblue;
+font-size: 15px;
+position: relative;
+top: 10px;
+left: 12px;
+}
+.labelsi{
+    color: aliceblue;
+font-size: 15px;
+position: relative;
+top: 10px;
+left: 12px;
+}
+
+.labelsi:after {
+    content: " *"; 
+    color: red; 
+}
+.registerbtn{
+    width: 150px;
+height: 53px;
+flex-shrink: 0;
+border-radius: 20px;
+background: #08A2A8;
+margin-top: 35px;
+border: 0px;
+}
+.imglogo{
+width: 110px;
+height: 110px;
+margin-top: 25px;
+}
+    </style>
+</head>
+<body>
+    
+    <form action="/update" method="post">
+       <center> <img src="/images/Rectangle 59.png" class="imglogo"></center>
+       <center><h1 style="color: white; font-weight: 600; line-height: 55px; margin-top: 20px; font-size: 20px;" > <%= username %></h1></center>
+<label class="label1" >Personal Details</label>
+<label class="label2">Household Details</label>
+
+
+<div class="container-flex">
+   
+    <div class="small">
+        <label class="labels"> First Name </label>
+        <input class="inputs" style="font-size: 20px; text-align: center;" name="Fname" required value="<%= idname.Fname %>">
+
+        <label class="labels"> Middle Name </label>
+        <input class="inputs" style="font-size: 20px; text-align: center;" name="Mname" required value="<%= idname.Mname %>">
+
+        <label class="labels"> Last Name </label>
+        <input class="inputs" style="font-size: 20px; text-align: center;" name="Lname" required value="<%= idname.Lname %>">
+
+        <label class="labels"> National ID / Iqama </label>
+        <input class="inputs" style="font-size: 20px; text-align: center;" name="Id" required value="<%= idname.Id %>">
+
+
+        <label class="labels"> Email </label>
+        <input class="inputs" style="font-size: 20px; text-align: center;" name="Email" required value="<%= idname.Email %>">
+
+  
+
+    </div>
+    
+    <div class="small"> 
+        <label class="labels"> Number of Occupants </label>
+        <input class="inputs" style="font-size: 20px; text-align: center;" name="NOccupants" required value="<%= idname.NOccupants %>">
+ <label class="labels"> House Size </label>
+        <input class="inputs" style="font-size: 20px; text-align: center;" name="HouseSize" required value="<%= idname.HouseSize %>">
+
+        <label class="labels"> Number of Bedrooms</label>
+        <input class="inputs" style="font-size: 20px; text-align: center;" name="NBedrooms" required value="<%= idname.NBedrooms %>">
+
+        <label class="labels"> Number of Bathrooms </label>
+        <input class="inputs" style="font-size: 20px; text-align: center;" name="NBathrooms" required value="<%= idname.NBathrooms %>">
+
+        <label class="labels"> Number of Cooling System </label>
+        <input class="inputs" style="font-size: 20px; text-align: center;" name="NCooling" required value="<%= idname.NCooling %>">
+
+
+
+    </div>
+
+    
+
+
+</div>
+<center>><button class="registerbtn" style="font-size: 25px; color: #FFFFFF; " type="submit">Save</button></center>
+</form>
+</body>
+</html>

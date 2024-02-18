@@ -1,0 +1,341 @@
+<%- include("partials/navbarbefore.ejs") %>
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <style>
+      html,
+      body {
+
+        background: #252735;
+        font-family: 'Akshar-Variable';
+
+      }
+
+      .container-fluid {
+        background-color: #36394C;
+
+
+      }
+
+      .navbar {
+
+        padding: 0 !important;
+      }
+
+      #navo {
+        color: #36394C;
+        opacity: 50%;
+        transition: background-color 0.9s ease;
+      }
+
+      #navo:hover {
+        opacity: 100%;
+        transition: background-color 0.9s ease;
+
+      }
+
+      #log {
+        color: rgb(47, 49, 12);
+      }
+
+      .inc {
+      color: #ffffff;
+      font-size: 40px;
+      position: absolute;
+      left: 1%;
+      font-family: "Montserrat", "Helvetica", Arial, sans-serif;
+      top: 6px;
+      user-select: none !important;
+      font-weight: bolder;
+    }
+
+      a {
+        font-family: Oswald;
+        font-size: 20px !important;
+        user-select: none !important;
+        color: white !important;
+        margin-left: 10px;
+        margin-right: 10px;
+
+      }
+
+      .navbar-collapse {
+        left: 200px !important;
+      }
+
+     .logDiv {
+      position: relative;
+      left: 9px;
+      background-color: #16676B;
+      align-items: center;
+      justify-content: center;
+      padding: 9px;
+      border-radius: 20px;
+    }
+
+      .head {
+        color: white;
+        margin-top: 40px;
+        text-align: center;
+      }
+
+      .intro {
+        color: white;
+        font-family: 'Akshar-Variable';
+        font-size: 20px;
+        margin-top: 30px;
+        text-align: center;
+      }
+
+      @font-face {
+        font-family: 'Akshar-Variable';
+        src: url('/fonts/Akshar-VariableFont_wght.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      .logo {
+        width: 250px;
+        margin: 0px auto;
+        border-radius: 20px;
+      }
+
+      .imgcon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 130px;
+
+
+      }
+
+      .btn-our {
+        display: block;
+        margin: 0 auto;
+        margin-top: 30px;
+        padding: 13px;
+        width: 200px;
+        height: 70px;
+        border-radius: 10px;
+        background-color: #00C4CC;
+      }
+
+      .btns {
+        font-family: 'Akshar-Variable';
+        font-size: 25px;
+        font-weight: bold;
+        color: white;
+      }
+
+      .about {
+
+        color: white;
+        font-family: 'Akshar-Variable';
+        font-size: 90px;
+        margin-top: 190px;
+
+      }
+
+      .container-flex {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 127px;
+        justify-content: center;
+        margin-top: 70px
+      }
+
+      .small {
+        height: 599px;
+        width: 318px;
+        border-radius: 5px;
+        background-color: #2A3142;
+
+
+
+      }
+
+      .newaccount {
+        font-size: 20px;
+        color: #8B88FC;
+        font-family: 'Akshar-Variable';
+        text-align: center;
+        position: relative;
+        left: 720px;
+        top: 15px;
+
+
+      }
+
+      .label1 {
+        color: white;
+        position: relative;
+        left: 200px;
+        top: 60px;
+        font-size: 20px;
+
+      }
+
+      .label2 {
+        color: white;
+        position: relative;
+        left: 455px;
+        top: 60px;
+        font-size: 20px;
+
+      }
+
+      .label3 {
+        color: white;
+        position: relative;
+        left: 780px;
+        top: 60px;
+        font-size: 20px;
+
+      }
+
+      .inputs {
+        width: 290px;
+        height: 36px;
+        flex-shrink: 0;
+        border-radius: 10px;
+        background: #D9D9D9;
+        margin: 13px;
+      }
+
+      .labels {
+        color: aliceblue;
+        font-size: 15px;
+        position: relative;
+        top: 10px;
+        left: 12px;
+      }
+
+      .labelsi {
+        color: aliceblue;
+        font-size: 15px;
+        position: relative;
+        top: 10px;
+        left: 12px;
+      }
+
+      .labelsi:after {
+        content: " *";
+        color: red;
+      }
+
+      .registerbtn {
+        width: 150px;
+        height: 53px;
+        flex-shrink: 0;
+        border-radius: 20px;
+        background: #08A2A8;
+        margin-top: 25px;
+
+      }
+    </style>
+  </head>
+
+  <body>
+
+
+    <form action="/register" method="post">
+      <label class="label1">Registration information</label>
+      <label class="label2">Personal Details</label>
+      <label class="label3">House and HouseHold Details</label>
+
+      <div class="container-flex">
+
+        <div class="small">
+          <label class="labelsi"> First Name </label>
+          <input class="inputs" style="font-size: 20px; text-align: center;" name="Fname" required>
+
+          <label class="labelsi"> Middle Name </label>
+          <input class="inputs" style="font-size: 20px; text-align: center;" name="Mname" required>
+
+          <label class="labelsi"> Last Name </label>
+          <input class="inputs" style="font-size: 20px; text-align: center;" name="Lname" required>
+
+          <label class="labelsi"> National ID / Iqama </label>
+          <input class="inputs" style="font-size: 20px; text-align: center;" name="Id" required>
+
+
+          <label class="labelsi"> Email </label>
+          <input class="inputs" style="font-size: 20px; text-align: center;" name="Email" required>
+
+          <label class="labelsi"> Password </label>
+          <input class="inputs" style="font-size: 20px; text-align: center;" name="Password" required>
+
+
+          <label class="labelsi"> Re-write Password </label>
+          <input class="inputs" style="font-size: 20px; text-align: center;" name="Password2" required>
+
+        </div>
+
+        <div class="small">
+          <label class="labels"> Date of birth </label>
+          <input class="inputs" style="font-size: 20px; text-align: center;" name="DOB">
+
+          <label class="labels"> Gender </label>
+          <input class="inputs" style="font-size: 20px; text-align: center;" name="Gender">
+
+          <label class="labels"> Income </label>
+          <input class="inputs" style="font-size: 20px; text-align: center;" name="Income">
+
+          <label class="labelsi"> Phone number </label>
+          <input class="inputs" style="font-size: 20px; text-align: center;" name="Pnumber" required>
+
+          <label class="labels"> Occupation </label>
+          <input class="inputs" style="font-size: 20px; text-align: center;" name="Occupation">
+
+          <label class="labels"> Homewnership </label>
+          <input class="inputs" style="font-size: 20px; text-align: center;" name="ownerShip">
+
+          <label class="labels"> Education Level </label>
+          <input class="inputs" style="font-size: 20px; text-align: center;" name="Education">
+
+        </div>
+
+        <div class="small">
+          <label class="labelsi"> Number of Occupants </label>
+          <input class="inputs" style="font-size: 20px; text-align: center;" name="NOccupants" required>
+
+
+          <label class="labelsi"> Type of Residence </label>
+          <input class="inputs" style="font-size: 20px; text-align: center;" name="Residence" required>
+
+          <label class="labelsi"> House Size </label>
+          <input class="inputs" style="font-size: 20px; text-align: center;" name="HouseSize" required>
+
+          <label class="labelsi"> Number of Bedrooms</label>
+          <input class="inputs" style="font-size: 20px; text-align: center;" name="NBedrooms" required>
+
+          <label class="labelsi"> Number of Bathrooms </label>
+          <input class="inputs" style="font-size: 20px; text-align: center;" name="NBathrooms" required>
+
+          <label class="labelsi"> Number of Cooling System </label>
+          <input class="inputs" style="font-size: 20px; text-align: center;" name="NCooling" required>
+
+          <label class="labels"> Year built </label>
+          <input class="inputs" style="font-size: 20px; text-align: center;" name="YearBuilt">
+        </div>
+      </div>
+
+
+
+      </div>
+      <center>><button class="registerbtn" style="font-size: 25px; color: #FFFFFF;" type="submit"> Register</button>
+      </center>
+    </form>
+
+  </body>
+
+  </html>
